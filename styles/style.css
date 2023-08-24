@@ -1696,10 +1696,19 @@ headnav .megamenu-nav li.megamenu-nav__label:last-child {
   font: var(--title-1-default, 400 48px/60px 'Source Sans Pro', sans-serif);
 }
 
-.content-para, .summary {
+.content-para {
 color: var(--text-base-default, #01151c);
 font: var(--body-emphasized, 400 20px/28px "Source Sans Pro", sans-serif);
 margin-bottom: 20px;  
+}
+
+.summary {
+  color: var(--text-base-default, #01151c);
+  font: var(--body-emphasized, 400 20px/28px "Source Sans Pro", sans-serif);
+  margin-bottom: 20px;  
+  padding-left: 15px;
+  border-left: 5px solid #0A1E26;
+  font-size: 16px;
 }
 
 .date {
