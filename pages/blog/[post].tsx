@@ -46,7 +46,7 @@ export default function BlogPost({ blogPost, page, pageUrl }: { blogPost: BlogPo
                 <p className="content-para">{post.subheading}</p>
 
                 <div className="summary" >
-                  {post.summary == "undefined" ? "" : post.summary}
+                  {post.summary == "undefined" ? "" : parse(post.summary)}
                 </div>
               </div>
 
