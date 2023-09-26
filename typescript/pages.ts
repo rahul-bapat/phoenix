@@ -98,6 +98,8 @@ export type BlogPosts = {
   heading: string;
   subheading: string;
   summary: string;
+  social_share: string;
+  social_share_instagram: string;
   body: string;
   body1: string;
   author: [Author];
