@@ -46,7 +46,9 @@ export default function BlogPost({ blogPost, page, pageUrl }: { blogPost: BlogPo
                 <p className="content-para">{post.subheading}</p>
 
                 <div className="summary" >
+                  
                   {post.summary == "undefined" ? "" : parse(post.summary)}
+                  
                 </div>
               </div>
 
@@ -71,7 +73,17 @@ export default function BlogPost({ blogPost, page, pageUrl }: { blogPost: BlogPo
                 {...post.$?.related_post}
                 blogs={post.related_post}
               />
-            </div>
+
+        <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
+          <img class="nav__search-button--magnifier__img" alt="LinkedIn" src="https://images.contentstack.io/v3/assets/blt60347518e44a0f6a/blt613a4c611a4d17e9/650db95b8f04577e37128bb8/icons8-linkedin.svg" width="24" height="24"/>
+        </a>            
+        <p>{post.social_share}</p>
+        <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+          <img class="nav__search-button--magnifier__img" alt="Instagram" src="https://images.contentstack.io/v3/assets/blt60347518e44a0f6a/blt9e4236a49d94cf29/650db9a89a515259818beca0/icons8-instagram.svg" width="24" height="24"/>
+        </a>                        
+          <p>{post.social_share_instagram}</p>
+
+        </div>
 
             <div className="right-content-block">
               <div className="sub-content">
