@@ -99,6 +99,7 @@ export type BlogPosts = {
   subheading: string;
   summary: string;
   body: string;
+  body_content: string;
   body1: string;
   author: [Author];
   related_post: [Blog];
