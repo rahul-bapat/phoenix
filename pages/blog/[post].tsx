@@ -75,7 +75,7 @@ export default function BlogPost({ blogPost, page, pageUrl }: { blogPost: BlogPo
 
             <div className="right-content-block">
               <div className="sub-content">
-                {parse(post.body)}
+                {parse(post.body_content)}
               </div>
               <div className="image-block">
                 <img
