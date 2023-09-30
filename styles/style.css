@@ -1,3 +1,4 @@
+
 @import "./json-preview.css";
 @import "./tool-tip.css";
 
@@ -1936,7 +1937,42 @@ margin-bottom: 20px;
   height: 20px;
 }
 
+.search-section {
+  margin-bottom: 100px;
+}
+.mainClass {
+  margin-top: 10%;
+}
+.searchHeading {
+  text-align: center;
+}
 
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
 
+.left-div, .middle-div, .right-div {
+  height: 100%;
+}
 
+.left-div {
+  width: 15%;
+  background-color: red;
+}
+
+.middle-div {
+  width: 70%;
+}
+
+.right-div {
+  width: 15%;
+  background-color: green;
+}
+
+.scrollable-container {
+  border : 1px dashed;
+}
 
