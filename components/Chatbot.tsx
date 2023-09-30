@@ -1,6 +1,5 @@
 import { useState, ChangeEvent, KeyboardEvent } from 'react';
 import styles from './Chatbot.module.css'; // Import the CSS module
-import { chatHistorySampleData } from '../pages/util/sampleSearch';
 import { SendRegular } from "@fluentui/react-icons";
 import React, { useRef } from 'react';
 
@@ -8,6 +7,19 @@ interface Message {
     text: string;
     user: boolean;
 }
+
+
+const chatHistorySampleData = [
+    "Who is chief technology officer ?",
+    "tell me about Christian Ulbrich",
+    "Sustainability in offices",
+    "London office rental yield 2023",
+    "Latest trends and insights",
+    "What was Yao Morin's role before? ",
+    "Yao Morin about JLL GPT",
+    "How many employees the JLL GPT is available?",
+    "sustainability offices latest"
+];
 
 const search_style = {
     border: "none !important",
