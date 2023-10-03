@@ -79,7 +79,7 @@
     color: #e51b1b;
     padding: 8px;
     margin-bottom: 8px;
-    margin-right: 200px;
+    width: fit-content;
   }
   
   .chatbotMessage {
