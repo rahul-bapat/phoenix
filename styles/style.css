@@ -259,6 +259,39 @@ footer a {
   border: none;
 }
 
+
+/* Make the header responsive */
+@media screen and (max-width: 768px) {
+  header .max-width {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  header .wrapper-logo {
+    margin: 10px 0;
+  }
+
+  header .wrapper-logo img {
+    width: 100px;
+  }
+
+  header nav {
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  nav ul li {
+    padding: 15px 0;
+    display: block;
+  }
+}
+
+/* Adjust the width of the text field on smaller screens */
+@media screen and (max-width: 550px) {
+  .text-field textarea {
+    width: 100%;
+  }
+}
 /* Blog list section */
 
 .blog-container {

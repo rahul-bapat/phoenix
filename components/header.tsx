@@ -13,6 +13,11 @@ export default function Header({ header, entries }: { header: HeaderProps, entri
   const router = useRouter();
   const [getHeader, setHeader] = useState(header);
 
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   function buildNavigation(ent: Entry, hd: HeaderProps) {
     let newHeader = { ...hd };
     if (ent.length !== newHeader.navigation_menu.length) {
@@ -54,7 +59,7 @@ export default function Header({ header, entries }: { header: HeaderProps, entri
   const headerData = getHeader ? getHeader : undefined;
 
   return (
-    <header className='nav__container'>
+    <header className={`nav__container ${isMenuOpen ? 'open' : ''}`}>
       <nav role="navigation" className="nav__wrapper" >
         <div className="grid-v2 container-v2 nav__bar nav__bar--top">
           <div className="nav__bar__leading">
@@ -64,9 +69,9 @@ export default function Header({ header, entries }: { header: HeaderProps, entri
                   title={headerData && headerData.title} className="cq-dd-image logo" loading="lazy" width="100" height="43" />
               </a>
             </div>
-            <div className='max-width header-div'>
+            <div className={`max-width header-div ${isMenuOpen ? 'open' : ''}`}>
               <nav className='menu'>
-                <ul className='nav-ul header-ul'>
+                <ul className={`nav-ul header-ul ${isMenuOpen ? 'open' : ''}`}>
                   {headerData ? (
                     headerData.navigation_menu.map((list) => {
                       const className =
@@ -90,36 +95,15 @@ export default function Header({ header, entries }: { header: HeaderProps, entri
               </nav>
             </div>
           </div>
-          <div className="nav__bar__trailing">
-              
-              <div className="buttons">
-                <div className="nightlight-button">
-                  <div className="icon-container">
-                    <i className="nav__nightlight-button--icon">
-                      <img className="nav__nightlight-button--magnifier__img" alt="Nightlight" src="/nightlight.svg" width="24" height="24"/>
-                    </i>
-                  </div>
-                </div>
-                <div className="search-button">
-                  <div className="icon-container">
-                    <i className="nav__search-button--magnifier">
-                      <img className="nav__search-button--magnifier__img" alt="Search" src="/search.svg" width="24" height="24" />
-                    </i>
-                  </div>
-                </div>
-                <div className="contact-button">
-                  <div className="icon-container">
-                    <i className="nav__contact-button--magnifier">
-                      <img className="nav__contact-button--magnifier__img" alt="Contact" src="/mail.svg" width="24" height="24" />
-                    </i>
-                  </div>
-                </div>
-              </div>
+          <div className="nav__bar-trailing">
+            <div className={`hamburger-menu ${isMenuOpen ? 'open' : ''}`} onClick={toggleMenu}>
+              <div className="bar"></div>
+              <div className="bar"></div>
+              <div className="bar"></div>
             </div>
+          </div>
         </div>
       </nav>
-
-
     </header>
   );
 }

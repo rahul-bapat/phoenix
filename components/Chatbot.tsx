@@ -48,8 +48,8 @@ const Chatbot = () => {
 
         // Update the messages state with the user message
         setMessages((prevMessages) => [
-            ...prevMessages,
             { text: message, user: true },
+            ...prevMessages,
         ]);
 
         setSelectedItem('');
@@ -60,8 +60,8 @@ const Chatbot = () => {
 
             // Update the messages state with the chatbot response
             setMessages((prevMessages) => [
-                ...prevMessages,
                 { text: chatbotResponse, user: false },
+                ...prevMessages,
             ]);
         } catch (error) {
             console.log(error);
@@ -102,40 +102,55 @@ const Chatbot = () => {
 
     return (
         <div className={styles.chatbotWrapper}>
-            <div className="" >
-                <div className={styles.chatContainer}>
-                    {messages.map((message, index) => (
-                        <div
-                            key={index}
-                            className={message.user ? styles.userMessage : styles.chatbotMessage}
-                        >
+            <h1 className={styles.title}>JLL.com search</h1>
+            <h2 className={styles.subheading}>Powered by AI</h2>
+            <div className={styles.chatContainer}>
+                {messages.map((message, index) => (
+                    <div key={index} className={styles.messagePair}>
+                        <div className={message.user ? styles.userMessage : styles.chatbotMessage}>
                             <span>{message.text}</span>
                         </div>
-                    ))}
-                </div>
-
-                <div className={styles.chatbot}>
-                    <input className="chat_input" style={search_style}
-                        type="text"
-                        placeholder="Type a new question ..."
-                        onChange={onMessageType}
-                        onKeyDown={handleKeyPress}
-                        value={selectedItem}
-                        ref={textBoxRef}
-                    />
-
-                    <span>Try popular searches:</span>
-                    <div className={styles.button_tags}>
-                        {chatHistorySampleData.map((item: string, index: number) => (
-                            <button className={styles.tag_button} key={index} onClick={() => handleSampleSearchClick(item)}>{item}</button>
-                        ))}
                     </div>
-                    <a href=""
-                        onClick={(event) => { event.preventDefault(); textBoxRef.current?.value?.trim() && handleUserMessage(textBoxRef.current?.value?.trim()) }} >
-                        <SendRegular className={styles.send_button} />
-                    </a>
-                </div>
+                ))}
             </div>
+            <div className={styles.inputContainer}>
+                <input
+                    className="chat_input"
+                    style={search_style}
+                    type="text"
+                    placeholder="Type a new question ..."
+                    onChange={onMessageType}
+                    onKeyDown={handleKeyPress}
+                    value={selectedItem}
+                    ref={textBoxRef}
+                />
+
+                <a
+                    href=""
+                    onClick={(event) => {
+                        event.preventDefault();
+                        textBoxRef.current?.value?.trim() &&
+                            handleUserMessage(textBoxRef.current?.value?.trim());
+                    }}
+                >
+                    <SendRegular className={styles.send_button} />
+                </a>
+            </div>
+
+            <div className={styles.button_tags}>
+                <span>Try popular searches:</span>
+                {chatHistorySampleData.map((item: string, index: number) => (
+                    <button
+                        className={styles.tag_button}
+                        key={index}
+                        onClick={() => handleSampleSearchClick(item)}
+                    >
+                        {item}
+                    </button>
+                ))}
+            </div>
+
+
         </div>
     );
 
