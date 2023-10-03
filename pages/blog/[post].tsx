@@ -76,7 +76,7 @@ export default function BlogPost({ blogPost, page, pageUrl }: { blogPost: BlogPo
 
   <h4> Social Media Post powered by AI</h4>
         <a href={"https://www.linkedin.com/sharing/share-offsite/?url=https://phoenix.contentstackapps.com"+post.url} target="_blank" rel="noopener noreferrer">
-         Linkedin Post <img class="nav__search-button--magnifier__img" alt="LinkedIn" src="https://images.contentstack.io/v3/assets/blt60347518e44a0f6a/blt613a4c611a4d17e9/650db95b8f04577e37128bb8/icons8-linkedin.svg" width="24" height="24"/>
+         Linkedin Post <img className="nav__search-button--magnifier__img" alt="LinkedIn" src="https://images.contentstack.io/v3/assets/blt60347518e44a0f6a/blt613a4c611a4d17e9/650db95b8f04577e37128bb8/icons8-linkedin.svg" width="24" height="24"/>
         
         </a>            
         <p>{post.social_share}</p>
@@ -88,7 +88,7 @@ export default function BlogPost({ blogPost, page, pageUrl }: { blogPost: BlogPo
             />
 <br></br>
         <a href={"https://www.facebook.com/sharer.php?u=https://phoenix.contentstackapps.com"+post.url} target="_blank" rel="noopener noreferrer">
-          Facebook Post <img class="nav__search-button--magnifier__img" alt="Facebook" src="https://images.contentstack.io/v3/assets/blt60347518e44a0f6a/blt48dd339c4221919a/6512ae9ec9f9dc61a07ba4e6/icons8-facebook.svg" width="24" height="24"/>
+          Facebook Post <img className="nav__search-button--magnifier__img" alt="Facebook" src="https://images.contentstack.io/v3/assets/blt60347518e44a0f6a/blt48dd339c4221919a/6512ae9ec9f9dc61a07ba4e6/icons8-facebook.svg" width="24" height="24"/>
         </a>                        
           <p>{post.social_share_instagram}</p>  
           <img
