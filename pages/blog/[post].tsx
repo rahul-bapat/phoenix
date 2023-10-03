@@ -74,16 +74,30 @@ export default function BlogPost({ blogPost, page, pageUrl }: { blogPost: BlogPo
                 blogs={post.related_post}
               />
 
-        <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
-          <img class="nav__search-button--magnifier__img" alt="LinkedIn" src="https://images.contentstack.io/v3/assets/blt60347518e44a0f6a/blt613a4c611a4d17e9/650db95b8f04577e37128bb8/icons8-linkedin.svg" width="24" height="24"/>
+  <h4> Social Media Post powered by AI</h4>
+        <a href={"https://www.linkedin.com/sharing/share-offsite/?url=https://phoenix.contentstackapps.com"+post.url} target="_blank" rel="noopener noreferrer">
+         Linkedin Post <img class="nav__search-button--magnifier__img" alt="LinkedIn" src="https://images.contentstack.io/v3/assets/blt60347518e44a0f6a/blt613a4c611a4d17e9/650db95b8f04577e37128bb8/icons8-linkedin.svg" width="24" height="24"/>
+        
         </a>            
         <p>{post.social_share}</p>
-        <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
-          <img class="nav__search-button--magnifier__img" alt="Instagram" src="https://images.contentstack.io/v3/assets/blt60347518e44a0f6a/blt9e4236a49d94cf29/650db9a89a515259818beca0/icons8-instagram.svg" width="24" height="24"/>
+        <img
+              className='social-media-img'
+              src={post.featured_image1 ? post.featured_image1.url : ""}
+              alt={post.title}
+              title={post.title}
+            />
+<br></br>
+        <a href={"https://www.facebook.com/sharer.php?u=https://phoenix.contentstackapps.com"+post.url} target="_blank" rel="noopener noreferrer">
+          Facebook Post <img class="nav__search-button--magnifier__img" alt="Facebook" src="https://images.contentstack.io/v3/assets/blt60347518e44a0f6a/blt48dd339c4221919a/6512ae9ec9f9dc61a07ba4e6/icons8-facebook.svg" width="24" height="24"/>
         </a>                        
-          <p>{post.social_share_instagram}</p>
-
-        </div>
+          <p>{post.social_share_instagram}</p>  
+          <img
+              className='social-media-img'
+              src={post.featured_image ? post.featured_image.url : ""}
+              alt={post.title}
+              title={post.title}
+            />
+      </div>
 
             <div className="right-content-block">
               <div className="sub-content">
