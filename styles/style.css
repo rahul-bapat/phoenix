@@ -319,6 +319,9 @@ footer a {
   max-width: 100%;
 }
 
+.social-media-img {
+  max-width: 50%;
+}
 .blog-column-left, .blog-column-right {
   display: flex;
   flex-direction: column;
