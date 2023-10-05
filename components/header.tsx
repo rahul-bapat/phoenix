@@ -74,7 +74,7 @@ export default function Header({ header, entries }: { header: HeaderProps, entri
               <nav className='menu'>
                 <ul className={`nav-ul header-ul ${isMenuOpen ? 'open' : ''}`}>
                   {headerData ? (
-                    headerData.navigation_menu.map((list) => {
+                    headerData.navigation_menu.slice(0, 5).map((list) => {
                       const className =
                         router.asPath === list.page_reference[0].url ? 'active' : '';
                       return (
