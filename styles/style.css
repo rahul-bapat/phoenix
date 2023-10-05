@@ -200,9 +200,18 @@ footer a {
 
 /* button area in contact form */
 
+.headings {
+  position: fixed;
+  width: 100%;
+  top: 80px;
+  background: #fff;
+}
+
 .input_container_wrapper {
   background: var(--surface-base-secondary,#edf3f4)!important;
   padding-bottom: 10px;
+  padding-left: 10%;
+  padding-right: 10%;
 }
 
 a.submit_button {
@@ -841,8 +850,13 @@ a.submit_button:hover {
 @media screen and (min-width: 320px) and (max-width: 767px) {
 
   .mainClass {
-    margin-top: 15% !important;
+    margin-top: 55% !important;
   }
+
+  .headings {
+    top: 78px;
+  }
+
   .header {
     height: 70px;
     background-color: #fff;
@@ -2103,8 +2117,7 @@ margin-bottom: 20px;
 }
 
 .mainClass {
-  margin-top: 7%;
-  /* background: var(--surface-base-secondary,#edf3f4)!important; */
+  margin-top: 18%;
 }
 
 .chat_input {

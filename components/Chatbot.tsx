@@ -101,8 +101,9 @@ const Chatbot = () => {
 
     return (
         <div className={styles.chatbotWrapper}>
+            <div className="headings">
             <h1 className={styles.title}>JLL.com search</h1>
-            <h2 className={styles.subheading}>Powered by AI</h2>
+            <h2 className={styles.subheading}>Powered by AI</h2></div>
             <div className={styles.chatContainer}>
                 {messages.map((message, index) => (
                     <div key={index} className={styles.messagePair}>
