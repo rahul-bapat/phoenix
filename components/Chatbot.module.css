@@ -3,7 +3,6 @@
   font-weight: bold;
   margin-bottom: 8px;
   text-align: center;
-  margin-left: 10%;
 }
 
 .subheading {
@@ -11,11 +10,11 @@
   font-weight: normal;
   color: #888;
   text-align: center;
-  margin-left: 10%;
 }
 
 .chatbotWrapper {
     margin-right: 10% ;
+    margin-left: 10%;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -67,9 +66,10 @@
     overflow-y: auto;
     flex-grow: 1;
     width: 100%;
-    max-height: calc(100vh - 300px);
+    max-height: 140px;
     display: flex;
     flex-direction: column-reverse;
+    max-height: 140px;
   }
   
   .userMessage {
@@ -79,6 +79,9 @@
     border: 1px solid #ffa9a9;
     border-radius: 6px;
     color: #e51b1b; */
+    background: #00151D1A;
+    border-radius: 6px;
+    border: 1px solid #ccc;
     padding: 8px;
     margin-bottom: 8px;
     width: fit-content;
@@ -94,6 +97,9 @@
     padding: 8px;
     margin-bottom: 8px;
     margin-left: 20px; 
+    background-color: #e5ebed;
+    border-radius: 6px;
+    border: 1px solid #ddd;
   }
   
   
@@ -126,20 +132,25 @@
   margin: 5px;
   padding: 5px 10px;
   border: none;
-  background-color: #E5EBED;
-  color: #333;
+  /* background-color: #E5EBED;
+  color: #333; */
+  background-color: rgb(0, 31, 42);
+  color: rgb(255, 255, 255);
   font-size: 14px;
   cursor: pointer;
 }
-.tag_button:hover {
-  background-color: #E0F7FF;
- }
+
+.tag_button span{
+  display: flex;
+  -webkit-box-pack: flex-end;
+  justify-content: flex-end;
+  margin-right: 0;
+}
 
 .inputContainer {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 80%;
 }
 
 @media screen and (max-width: 768px) {
@@ -164,8 +175,3 @@
   }
 }  
 
-@media screen and (min-width: 320px) and (max-width: 767px) {
-  .inputContainer {
-    width: 90%;
-  }
-}

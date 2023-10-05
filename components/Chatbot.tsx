@@ -22,11 +22,11 @@ const chatHistorySampleData = [
 
 const search_style = {
     border: "none !important",
-    width: "100% !important",
     height: "70px !important",
     paddingleft: "5px",
     fontsize: "14px",
-    outline: "none"
+    outline: "none",
+    width: "200px",
 };
 
 
@@ -123,6 +123,7 @@ const Chatbot = () => {
                         onKeyDown={handleKeyPress}
                         value={selectedItem}
                         ref={textBoxRef}
+                        
                     />
 
                     <a className="submit_button"
@@ -147,6 +148,7 @@ const Chatbot = () => {
                             onClick={() => handleSampleSearchClick(item)}
                         >
                             {item}
+                            <span><img src="/btn_arrow_blue.svg" alt="Button Image"/></span>
                         </button>
                     ))}
                 </div>

@@ -2,11 +2,14 @@
 @import "./json-preview.css";
 @import "./tool-tip.css";
 
+
 body {
   font-family: Inter, sans-serif;
   font-size: 14px;
   margin: 0;
   line-height: 22px;
+  min-height: 100vh;
+  background-color: #edf3f4;
 }
 
 body.menu-open {
@@ -198,10 +201,7 @@ footer a {
 /* button area in contact form */
 
 .input_container_wrapper {
-  position: fixed;
-  bottom: 0;
   background: var(--surface-base-secondary,#edf3f4)!important;
-  padding-left: 10%;
   padding-bottom: 10px;
 }
 
@@ -211,12 +211,13 @@ a.submit_button {
   justify-content: center;
   align-items: center;
   border-radius: 3px;
-  background: #E5EBED;
+  background-color: rgb(5, 49, 65);
+  color: #fff;
   margin-right: 10px;
 }
 
 a.submit_button:hover {
-  color: #222;
+  color: #fff;
 }
 
 .btn {
@@ -2103,8 +2104,7 @@ margin-bottom: 20px;
 
 .mainClass {
   margin-top: 7%;
-  background: var(--surface-base-secondary,#edf3f4)!important;
-  padding-bottom: 200px;
+  /* background: var(--surface-base-secondary,#edf3f4)!important; */
 }
 
 .chat_input {
