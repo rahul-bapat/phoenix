@@ -2012,3 +2012,28 @@ margin-bottom: 20px;
   border : 1px dashed;
 }
 
+.jll-highlight {  
+  font-weight: bold;
+}
+
+.jll-quote {
+  font-style: italic;
+  color: #888;
+  text-decoration: underline;
+  /*animation: blink 10s linear infinite;*/
+}
+
+/*@keyframes blink {
+  50% {opacity: 0;}
+}*/
+
+.jll-imp-words {
+  font-weight: bold;
+  font-style: italic;
+}
+
+.jll-num {
+  background-color: lightgray;
+  font-weight: bold;
+}
+
