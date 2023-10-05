@@ -16,6 +16,7 @@ export default function Header({ header, entries }: { header: HeaderProps, entri
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+    document.body.classList.toggle('menu-open');
   };
 
   function buildNavigation(ent: Entry, hd: HeaderProps) {
@@ -73,7 +74,7 @@ export default function Header({ header, entries }: { header: HeaderProps, entri
               <nav className='menu'>
                 <ul className={`nav-ul header-ul ${isMenuOpen ? 'open' : ''}`}>
                   {headerData ? (
-                    headerData.navigation_menu.map((list) => {
+                    headerData.navigation_menu.slice(0, 5).map((list) => {
                       const className =
                         router.asPath === list.page_reference[0].url ? 'active' : '';
                       return (
@@ -96,12 +97,27 @@ export default function Header({ header, entries }: { header: HeaderProps, entri
             </div>
           </div>
           <div className="nav__bar-trailing">
-            <div className={`hamburger-menu ${isMenuOpen ? 'open' : ''}`} onClick={toggleMenu}>
-              <div className="bar"></div>
-              <div className="bar"></div>
-              <div className="bar"></div>
+            <div className="hamburger-menu" onClick={toggleMenu}>
+              <span className="hamburger-menu__container">
+                <span className= {`hamburger-menu__icon ${isMenuOpen ?'hamburger-menu__icon--open' : ''}`}></span>
+              </span>
             </div>
           </div>
+        </div>
+        <div className="grid-v2 container-v2 nav__bar nav__bar--bottom">
+          {isMenuOpen && (
+            <div className="mobile-menu">
+              <ul className="mobile-menu__list">
+                {headerData && headerData.navigation_menu.map((list) => (
+                  <li key={list.label} className="mobile-menu__item">
+                    <Link href={list.page_reference[0].url} className="mobile-menu__link">
+                      {list.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
         </div>
       </nav>
     </header>

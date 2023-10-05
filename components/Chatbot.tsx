@@ -1,6 +1,5 @@
 import { useState, ChangeEvent, KeyboardEvent } from 'react';
 import styles from './Chatbot.module.css'; // Import the CSS module
-import { SendRegular } from "@fluentui/react-icons";
 import React, { useRef } from 'react';
 
 interface Message {
@@ -23,11 +22,11 @@ const chatHistorySampleData = [
 
 const search_style = {
     border: "none !important",
-    width: "100% !important",
     height: "70px !important",
     paddingleft: "5px",
     fontsize: "14px",
-    outline: "none"
+    outline: "none",
+    width: "200px",
 };
 
 
@@ -113,43 +112,47 @@ const Chatbot = () => {
                     </div>
                 ))}
             </div>
-            <div className={styles.inputContainer}>
-                <input
-                    className="chat_input"
-                    style={search_style}
-                    type="text"
-                    placeholder="Type a new question ..."
-                    onChange={onMessageType}
-                    onKeyDown={handleKeyPress}
-                    value={selectedItem}
-                    ref={textBoxRef}
-                />
+            <div className='input_container_wrapper'>
+                <div className={styles.inputContainer}>
+                    <input
+                        className="chat_input"
+                        style={search_style}
+                        type="text"
+                        placeholder="Type a new question ..."
+                        onChange={onMessageType}
+                        onKeyDown={handleKeyPress}
+                        value={selectedItem}
+                        ref={textBoxRef}
+                        
+                    />
 
-                <a
-                    href=""
-                    onClick={(event) => {
-                        event.preventDefault();
-                        textBoxRef.current?.value?.trim() &&
-                            handleUserMessage(textBoxRef.current?.value?.trim());
-                    }}
-                >
-                    <SendRegular className={styles.send_button} />
-                </a>
-            </div>
-
-            <div className={styles.button_tags}>
-                <span>Try popular searches:</span>
-                {chatHistorySampleData.map((item: string, index: number) => (
-                    <button
-                        className={styles.tag_button}
-                        key={index}
-                        onClick={() => handleSampleSearchClick(item)}
+                    <a className="submit_button"
+                        href=""
+                        onClick={(event) => {
+                            event.preventDefault();
+                            textBoxRef.current?.value?.trim() &&
+                                handleUserMessage(textBoxRef.current?.value?.trim());
+                        }}
                     >
-                        {item}
-                    </button>
-                ))}
-            </div>
+                    Submit
+                    <img src="/btn_arrow_black.svg"/>
+                    </a>
+                </div>
 
+                <div className={styles.button_tags}>
+                    <span>Try popular searches:</span>
+                    {chatHistorySampleData.map((item: string, index: number) => (
+                        <button
+                            className={styles.tag_button}
+                            key={index}
+                            onClick={() => handleSampleSearchClick(item)}
+                        >
+                            {item}
+                            <span><img src="/btn_arrow_blue.svg" alt="Button Image"/></span>
+                        </button>
+                    ))}
+                </div>
+            </div>
 
         </div>
     );
