@@ -118,6 +118,7 @@ export type BlogPosts = {
   banner_text : string;
   banner_cta_label: string;
   cta_label: string;
+  analytics_link: string;
 }
 
 export type phoenixArticle = {
