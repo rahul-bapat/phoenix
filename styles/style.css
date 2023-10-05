@@ -402,10 +402,6 @@ a.submit_button:hover {
     width: 100%;
   }
 
-  .mainClass {
-    margin-top: 15%;
-  }
-
   .header-div {
     display: none !important;
   }
@@ -848,10 +844,6 @@ a.submit_button:hover {
 /* ========================== */
 
 @media screen and (min-width: 320px) and (max-width: 767px) {
-
-  .mainClass {
-    margin-top: 42% !important;
-  }
 
   .headings {
     top: 78px;
@@ -2114,10 +2106,6 @@ margin-bottom: 20px;
 
 .search-section {
   margin-bottom: 100px;
-}
-
-.mainClass {
-  margin-top: 16%;
 }
 
 .chat_input {
