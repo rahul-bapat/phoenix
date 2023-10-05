@@ -203,8 +203,8 @@ footer a {
 .headings {
   position: fixed;
   width: 100%;
-  top: 80px;
-  background: #fff;
+  top: 12%;
+  background: #edf3f4;
 }
 
 .input_container_wrapper {
@@ -850,7 +850,7 @@ a.submit_button:hover {
 @media screen and (min-width: 320px) and (max-width: 767px) {
 
   .mainClass {
-    margin-top: 55% !important;
+    margin-top: 42% !important;
   }
 
   .headings {
@@ -2117,7 +2117,7 @@ margin-bottom: 20px;
 }
 
 .mainClass {
-  margin-top: 18%;
+  margin-top: 16%;
 }
 
 .chat_input {
