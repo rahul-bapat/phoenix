@@ -11,6 +11,7 @@ class MyDocument extends Document {
     return (
       <Html lang='en'>
         <Head>
+          <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"></script>
           <link rel='preconnect' href='https://fonts.gstatic.com' />
           <link
             href='https://fonts.googleapis.com/css?family=Inter&amp;display=swap'
@@ -39,6 +40,7 @@ class MyDocument extends Document {
           <link href='/favicon.ico' rel='icon' type='image/ico' sizes='16x16' />
           <link rel='apple-touch-icon' href='/path/to/apple-touch-icon.png' />
           <meta name='theme-color' content='#317EFB' />
+          <script src='/analytics.js'/>
         </Head>
         <body>
           <Main />
