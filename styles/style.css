@@ -1925,6 +1925,14 @@ margin-bottom: 20px;
   margin-bottom: 20px;
 }
 
+.section-one .right-content-block .sub-content p, .section-one .right-content-block .sub-content p span  {
+  color: #01151C;
+}
+
+.section-one .right-content-block .sub-content p em {
+  background-color: unset;
+}
+
 .section-one .right-content-block p{
   margin-bottom: 10px;
 }
@@ -2151,7 +2159,7 @@ margin-bottom: 20px;
 }
 
 .jll-highlight {  
-  font-weight: bold;
+  font-weight: 600;
 }
 
 .jll-quote {
@@ -2214,13 +2222,17 @@ vertical-align: top;
 }
 
 .ui-content {
-  background-color: orange;
+  background-color: rgb(8, 71, 94);
   display: none;
   padding: 10px;
   display: inline-block;
   width: 550px;
   height: 300px;
   overflow-y: auto;
+}
+
+.ui-content p {
+  color: #fff;
 }
 
 .ui.expanded .ui-content {
