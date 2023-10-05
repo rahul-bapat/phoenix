@@ -43,7 +43,7 @@ export default async function handler(req, res) {
                 response.data.value.forEach(function (item) {
                     console.log(item.path);
                     let articlePath = item.path;
-                    articlePath = articlePath.replace("/content/jll-dot-com/countries/amer/us", "https://www.us.jll.com/en");
+                    articlePath = articlePath.replace("/content/jll-dot-com/countries/amer/us/en", "https://www.us.jll.com/en");
 
                     mergedTexts = mergedTexts + "<articleStart>" + item.content + "<articleEnd>"
                         + "<pathStart>" + articlePath + "<pathEnd>"
