@@ -26,7 +26,7 @@ const search_style = {
     paddingleft: "5px",
     fontsize: "14px",
     outline: "none",
-    width: "200px",
+    width: "100% !important",
 };
 
 
@@ -148,7 +148,6 @@ const Chatbot = () => {
                             onClick={() => handleSampleSearchClick(item)}
                         >
                             {item}
-                            <span><img src="/btn_arrow_blue.svg" alt="Button Image"/></span>
                         </button>
                     ))}
                 </div>
