@@ -3,7 +3,7 @@ function toggleExpanded() {
   ui.classList.toggle("expanded");
 }
 var pagename="default";
-var url= "https://www.us.jll.com";
+var url= document.getElementById('analytics_link').value;
 if(url.charAt(url.length-1)==('/')){
    url= url.substring('0',url.length-1)
 }
