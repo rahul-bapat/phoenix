@@ -3,6 +3,7 @@
   font-weight: bold;
   margin-bottom: 8px;
   text-align: center;
+  margin-left: 10%;
 }
 
 .subheading {
@@ -10,9 +11,10 @@
   font-weight: normal;
   color: #888;
   text-align: center;
+  margin-left: 10%;
 }
+
 .chatbotWrapper {
-    margin-left: 10%;
     margin-right: 10% ;
     display: flex;
     flex-direction: column;
@@ -73,24 +75,27 @@
   .userMessage {
     text-align: left;
     margin-bottom: 0.5rem;
-    background-color: #fde7e7;
+    /* background-color: #fde7e7;
     border: 1px solid #ffa9a9;
     border-radius: 6px;
-    color: #e51b1b;
+    color: #e51b1b; */
     padding: 8px;
     margin-bottom: 8px;
     width: fit-content;
+    font-weight: bold;
   }
   
   .chatbotMessage {
-    background-color: #e6f3ff;
-    border: 1px solid #add8e6;
+    /* background-color: #e6f3ff; */
+    background-color: #AFBCCF;
+    /* border: 1px solid #add8e6; */
     border-radius: 6px;
-    color: #007bff;
+    /* color: #007bff; */
     padding: 8px;
     margin-bottom: 8px;
     margin-left: 20px; 
   }
+  
   
   .chat_input {
     border:none !important;
@@ -121,18 +126,20 @@
   margin: 5px;
   padding: 5px 10px;
   border: none;
-  border-radius: 20px;
-  background-color: #e0e0e0;
+  background-color: #E5EBED;
   color: #333;
   font-size: 14px;
   cursor: pointer;
 }
-
+.tag_button:hover {
+  background-color: #E0F7FF;
+ }
 
 .inputContainer {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 80%;
 }
 
 @media screen and (max-width: 768px) {
@@ -149,9 +156,16 @@
 
   .button_tags {
     flex-direction: column;
+    width: 80%;
   }
 
   .send_button {
     margin-top: 10px;
   }
 }  
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .inputContainer {
+    width: 90%;
+  }
+}
