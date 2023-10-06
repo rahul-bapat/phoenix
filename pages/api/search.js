@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { has } from 'lodash';
 
 export default async function handler(req, res) {
     const { query } = req.body;
@@ -14,7 +15,7 @@ export default async function handler(req, res) {
         "scoringParameters": null,
         "scoringProfile": "Service Tiles",
         "search": query,
-        "searchFields": "content",
+        "searchFields": "content,title,city,stateProvince,country,jobTitle",
         "queryType": "simple",
         "searchMode": "any",
         "top": 10,
@@ -40,16 +41,39 @@ export default async function handler(req, res) {
             if (response.data.value) {
 
                 console.log("articles - ");
+                console.log("Hi");
                 response.data.value.forEach(function (item) {
                     console.log(item.path);
                     let articlePath = item.path;
                     articlePath = articlePath.replace("/content/jll-dot-com/countries/amer/us/en", "https://www.us.jll.com/en");
-
-                    mergedTexts = mergedTexts + "<articleStart>" + item.content + "<articleEnd>"
+                    console.log("Content type" + item.contentTypes);
+                    if(item.contentTypes && item.contentTypes.includes('People') ){
+                        let content = [];
+                        content.push('Name:' + item.title);
+                        content.push('city:' + item.city );
+                        content.push('stateProvince:'+item.stateProvince);
+                        content.push('jobTitle:'+item.jobTitle);
+                        content.push('country:'+item.country);
+                        mergedTexts = mergedTexts + "<peopleInfoStart>" +content.join(',')+ "<peopleInfoEnd>"
                         + "<pathStart>" + articlePath + "<pathEnd>"
+
+
+
+                    }
+                    else if(item.contentTypes && item.contentTypes.includes('News release')){
+
+                        mergedTexts = mergedTexts + "<articleStart>" + item.content + "<articleEnd>"
+                            + "<pathStart>" + articlePath + "<pathEnd>"
+
+
+                    }
+
                 });
+                console.log(mergedTexts);
+
 
                 var truncatedString = truncateString(mergedTexts, 3700);
+
                 answer = await generateAnswer(query, mergedTexts);
                 status = 200;
             }
@@ -92,14 +116,11 @@ async function generateAnswer(question, context) {
         "messages": [
             {
                 "role": "user", "content":
-                    `Please find answer or details or relevant information, 
-                    feel free to rephrase
-                    and respond in maximum 5 lines  
-                    in the article extracts given context for user's prompt, 
-                    answer in 2 or 3 sentences. Answer only from the context provided here.
-                    Can you also include the article path in the answer as a reference 
-                    in the response inside an anchor tag with 'Read more' 
-                    If it is about a person, please include the profile details and 
+                    `Please find answer or details or relevant information
+                    to respond in maximum 5 lines
+                    from the given context for user's prompt.
+                    Answer only from the context provided here.
+                    If it is about a person, please include the profile details and
                     give importance to the profile details than other info
              Prompt: ${question} and Context: ${context}`
             }
