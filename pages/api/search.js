@@ -40,13 +40,11 @@ export default async function handler(req, res) {
             var mergedTexts = "";
             if (response.data.value) {
 
-                console.log("articles - ");
-                console.log("Hi");
                 response.data.value.forEach(function (item) {
-                    console.log(item.path);
+
                     let articlePath = item.path;
                     articlePath = articlePath.replace("/content/jll-dot-com/countries/amer/us/en", "https://www.us.jll.com/en");
-                    console.log("Content type" + item.contentTypes);
+
                     if(item.contentTypes && item.contentTypes.includes('People') ){
                         let content = [];
                         content.push('Name:' + item.title);
@@ -69,7 +67,8 @@ export default async function handler(req, res) {
                     }
 
                 });
-                console.log(mergedTexts);
+
+
 
 
                 var truncatedString = truncateString(mergedTexts, 3700);
