@@ -1823,6 +1823,32 @@ headnav .megamenu-nav li.megamenu-nav__label:last-child {
   margin-top: 40px;
 }
 
+.left-content-block p {
+    color: rgba(0, 0, 0, 0.75);
+    font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', 'Fira Sans', Ubuntu, Oxygen, 'Oxygen Sans', Cantarell, 'Droid Sans', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Lucida Grande', Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+}
+.left-content-block a.social_media_linkedin, .left-content-block a.social_media_facebook {
+    font-size: 24px;
+    color: #0a66c2;
+    font-weight: bold;
+    position: relative;
+}
+
+.social-media-block {
+  padding: 10px;
+  border: 1px solid #0a66c2;
+  border-radius: 6px;
+  margin-bottom: 20px;
+}
+
+.left-content-block a.social_media_linkedin img{
+    width: unset;
+    position: absolute;
+    left: 80px;
+}
+
 .section-zero .left-content-block .heading-block{
     display: flex;
     flex-direction: column;
@@ -2231,8 +2257,13 @@ vertical-align: top;
   overflow-y: auto;
 }
 
-.ui-content p {
+.ui-content p, .ui-content strong {
   color: #fff;
+}
+
+.ui-content strong {
+  margin-bottom: 10px;
+  display: inline-block;
 }
 
 .ui.expanded .ui-content {

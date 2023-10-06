@@ -69,14 +69,10 @@ export default function BlogPost({ blogPost, page, pageUrl }: { blogPost: BlogPo
         <div className="content-wrapper">
           <div className="section-one">
             <div className="left-content-block">
-              <ArchiveRelative
-                {...post.$?.related_post}
-                blogs={post.related_post}
-              />
-
-  <h4> Social Media Post powered by AI</h4>
-        <a href={"https://www.linkedin.com/sharing/share-offsite/?url=https://phoenix.contentstackapps.com"+post.url} target="_blank" rel="noopener noreferrer">
-         Linkedin Post <img className="nav__search-button--magnifier__img" alt="LinkedIn" src="https://images.contentstack.io/v3/assets/blt60347518e44a0f6a/blt613a4c611a4d17e9/650db95b8f04577e37128bb8/icons8-linkedin.svg" width="24" height="24"/>
+            <h4> Social Media Post powered by AI</h4>
+            <div className='social-media-block'>
+        <a className="social_media_linkedin" href={"https://www.linkedin.com/sharing/share-offsite/?url=https://phoenix.contentstackapps.com"+post.url} target="_blank" rel="noopener noreferrer">
+         Linkedin Post <img className="nav__search-button--magnifier__img" alt="LinkedIn" src="/linkedin.svg" width="24" height="24"/>
         
         </a>            
         <p>{post.social_share}</p>
@@ -86,9 +82,10 @@ export default function BlogPost({ blogPost, page, pageUrl }: { blogPost: BlogPo
               alt={post.title}
               title={post.title}
             />
-<br></br>
-        <a href={"https://www.facebook.com/sharer.php?u=https://phoenix.contentstackapps.com"+post.url} target="_blank" rel="noopener noreferrer">
-          Facebook Post <img className="nav__search-button--magnifier__img" alt="Facebook" src="https://images.contentstack.io/v3/assets/blt60347518e44a0f6a/blt48dd339c4221919a/6512ae9ec9f9dc61a07ba4e6/icons8-facebook.svg" width="24" height="24"/>
+            </div>
+      <div className='social-media-block'>
+        <a className="social_media_facebook" href={"https://www.facebook.com/sharer.php?u=https://phoenix.contentstackapps.com"+post.url} target="_blank" rel="noopener noreferrer">
+          Facebook Post <img className="nav__search-button--magnifier__img" alt="Facebook" src="/icons8-facebook.svg" width="24" height="24"/>
         </a>                        
           <p>{post.social_share_instagram}</p>  
           <img
@@ -97,7 +94,12 @@ export default function BlogPost({ blogPost, page, pageUrl }: { blogPost: BlogPo
               alt={post.title}
               title={post.title}
             />
-      </div>
+            </div>
+              <ArchiveRelative
+                {...post.$?.related_post}
+                blogs={post.related_post}
+              />
+            </div>
 
             <div className="right-content-block">
               <div className="sub-content">
