@@ -132,6 +132,7 @@ export default function BlogPost({ blogPost, page, pageUrl }: { blogPost: BlogPo
         </div>
       </div>
       <input type='hidden' value={post.analytics_link} name='analytics_link' id='analytics_link'></input>
+      <script src='/analytics.js'async/>
     </>
   );
 }
