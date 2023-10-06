@@ -9,15 +9,16 @@ interface Message {
 
 
 const chatHistorySampleData = [
-    "Who is chief technology officer ?",
-    "tell me about Christian Ulbrich",
-    "Sustainability in offices",
+    "How JLL GPT empowering employees?",
+    "What is JLL decarbonization strategy?",
+    "Tell me about Mihir Shah",
+    "Who is the Chief Executive Officer & President of JLL?",
+    "Who is chief technology officer of JLLT ?",
+    "Cheryl R. Carron",
     "London office rental yield 2023",
     "Latest trends and insights",
-    "What was Yao Morin's role before? ",
     "Yao Morin about JLL GPT",
-    "How many employees the JLL GPT is available?",
-    "sustainability offices latest"
+    "who are JLL Board of Directors?",
 ];
 
 const search_style = {
