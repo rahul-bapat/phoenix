@@ -226,11 +226,14 @@ const insights_html = paragraphs.map((p) => `<p>${p}</p>`).join('\n');
 
 console.log(insights_html);
 
+var urlLink = url.replace('MATCH', '');
+
 var insights_html_2= '<div id="ui" class="ui" onclick="toggleExpanded()">' +
                 '<div class="ui-header">' +
                     '<h3>Analytics Insights</h3>' +
                 '</div>' +
                 '<div class="ui-content">' +
+                   '<strong> Insights for : ' +  urlLink +'</strong>' +
                    '<div>'+insights_html+'</div>'+
                 '</div>' +
              '</div>';
