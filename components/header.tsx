@@ -108,7 +108,7 @@ export default function Header({ header, entries }: { header: HeaderProps, entri
           {isMenuOpen && (
             <div className="mobile-menu">
               <ul className="mobile-menu__list">
-                {headerData && headerData.navigation_menu.slice(0, 5)map((list) => (
+                {headerData && headerData.navigation_menu.slice(0, 5).map((list) => (
                   <li key={list.label} className="mobile-menu__item">
                     <Link href={list.page_reference[0].url} className="mobile-menu__link">
                       {list.label}
