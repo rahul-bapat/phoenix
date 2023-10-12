@@ -31,16 +31,27 @@
         "I am Just browsing"
       ]);
       const [replacementButtons, setReplacementButtons] = useState<string[]>([
+        "I'd like to learn about JLL's.",
+        "I'd like to learn about JLL's services.",
         "How JLL GPT empowering employees?",
-        "What is JLL decarbonization strategy?",
-        "Tell me about Mihir Shah",
+        // "What is JLL decarbonization strategy?",
+        // "Tell me about Mihir Shah",
         "Who is the Chief Executive Officer & President of JLL?",
-        "Who is chief technology officer of JLLT ?",
-        "Cheryl R. Carron",
-        "London office rental yield 2023",
+        // "Who is chief technology officer of JLLT ?",
+        // "Cheryl R. Carron",
+        // "London office rental yield 2023",
         "Latest trends and insights",
         "Yao Morin about JLL GPT",
-        "who are JLL Board of Directors?",
+        // "who are JLL Board of Directors?",
+        
+      ]);
+      const [jllServicesButtons, setJllServicesButtons] = useState<string[]>([
+        "Find & Lease space",
+        "Manage property & portfolio.",
+        "Design & Deliever projects",
+        "Invest in eeal estate",
+        "Transform with technology",
+        
       ]);
 
       const handleChatbotToggle = () => {
@@ -66,6 +77,13 @@
             textBoxRef.current.focus();
         }
       };
+
+      const handleSecondLevelSearchClick = (item: string, id: number) => {
+        console.log(id);
+        if(id === 0) {
+          setReplacementButtons(jllServicesButtons);
+        }
+      }
 
       const handleUserMessage = async (message: string) => {
 
@@ -157,7 +175,6 @@
                       </button>
                       
                   ))}
-                  </div>
                   <div className={styles.chatContainer}>
                   {messages.map((message, index) => (
                       <div key={index} className={styles.messagePair}>
@@ -167,6 +184,8 @@
                       </div>
                   ))}
               </div>
+                  </div>
+                  
                   <div className={styles.inputContainer}>
                       <input
                           className="chat_input"

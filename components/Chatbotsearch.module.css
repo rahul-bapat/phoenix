@@ -70,12 +70,10 @@
   }
   
   .chatContainer {
-    overflow-y: auto;
     flex-grow: 1;
     width: 100%;
     display: flex;
     flex-direction: column-reverse;
-    height: 140px;
     padding-left: 2%;
     padding-right: 2%;
     margin-bottom: 20px;
@@ -169,7 +167,7 @@
     position: absolute;
     top: 100px;
     right: 0;
-    height: 130px;
+    height: 280px;
 }
 
 @media screen and (max-width: 768px) {
@@ -233,7 +231,8 @@
 /* Chatbot wrapper */
 
 .chatbotWrapper {
-  position: fixed;
+  position: relative;
+    top: 90px;
   bottom: 10px;
   right: 30px;
   width: 400px;

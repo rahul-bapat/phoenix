@@ -219,8 +219,9 @@ footer a {
   background-color: rgb(5, 49, 65);
   border-bottom-right-radius: unset;
   border-bottom-left-radius: unset;
-  top: 95px;
-    width: 392px;
+  position: absolute;
+    top: 0;
+    width: 100%;
 }
 .mainClass {
   justify-content: flex-end;
@@ -230,8 +231,8 @@ footer a {
 .input_container_wrapper {
   background: var(--surface-base-secondary,#edf3f4)!important;
   padding-bottom: 10px;
-  padding-left: 2%;
-  padding-right: 2%;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 .button_tags {
