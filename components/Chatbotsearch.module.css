@@ -209,3 +209,58 @@
     margin-left: 10px;
   }
 }
+
+/* Chatbot icon */
+
+.chatbotIcon {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  cursor: pointer;
+  z-index: 9999;
+  border: 2x #333 solid;
+}
+
+/* Chatbot close button */
+
+.closeButton {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+  z-index: 9999;
+}
+
+/* Chatbot wrapper */
+
+.chatbotWrapper {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 400px;
+  height: 500px;
+  background-color: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  padding: 20px;
+  z-index: 9998;
+}
+
+/* Chatbot animation */
+
+@keyframes chatbotAnimation {
+  0%{
+    transform: scale(0);
+    opacity: 0;
+  }
+  100%{
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Apply animation to chatbot wrapper */
+
+.chatbotWrapper {
+  animation: chatbotAnimation 0.5s ease-in-out;
+}

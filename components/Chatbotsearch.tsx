@@ -36,6 +36,8 @@
   const Chatbotsearch = () => {
       const [messages, setMessages] = useState<Message[]>([]);
       const [selectedItem, setSelectedItem] = useState("");
+      const [isIconVisible, setIconVisible] = useState(true);
+      const [isChatbotOpen, setIsChatbotOpen] = useState(false);
       const textBoxRef = useRef<HTMLInputElement>(null);
       const [button1Clicked, setButton1Clicked] = useState(false);
       const [initialQuestionButtons, setInitialQuestionButtons] = useState<string[]>([
@@ -55,18 +57,28 @@
         "who are JLL Board of Directors?",
       ]);
 
+      const handleChatbotToggle = () => {
+          setIsChatbotOpen(!isChatbotOpen);
+          setIconVisible(false);
+      };
+
+      const handleCloseChatbot = () => {
+          setIsChatbotOpen(false);
+          setIconVisible(true);
+      };
+
       const handleSampleSearchClick = (item: string, id: number) => {
-          console.log(id);
-          if(id === 0) {
-            setInitialQuestionButtons(replacementButtons);
-          } else if(id === 1) {
-            console.log('1');
-            setButton1Clicked(true);
-          }
-          // setSelectedItem(item);
-          // if (textBoxRef.current !== null) {
-          //     textBoxRef.current.focus();
-          // }
+        console.log(id);
+        if(id === 0) {
+          setInitialQuestionButtons(replacementButtons);
+        } else if(id === 1) {
+          console.log('1');
+          setButton1Clicked(true);
+        }  
+        setSelectedItem(item);
+        if (textBoxRef.current !== null) {
+            textBoxRef.current.focus();
+        }
       };
 
       const handleUserMessage = async (message: string) => {
@@ -126,7 +138,11 @@
       };
 
       return (
+          <> {isChatbotOpen && (
           <div className={styles.chatbotWrapper}>
+                  <div className={styles.closeButton} onClick={handleCloseChatbot}>
+                      <img src="./linkedin.svg" alt="Close Button" />
+                  </div>
               <div className="headings">
               <h1 className={styles.title}>JLL.com search</h1>
               <h2 className={styles.subheading}>Powered by AI</h2></div>
@@ -198,7 +214,15 @@
                   
               </div>
 
+
           </div>
+          )}
+              {isIconVisible &&
+                  <div className={styles.chatbotIcon} onClick={handleChatbotToggle}>
+                      <img src="/hackathon.svg" />
+                  </div>
+              }
+          </>
       );
 
 
