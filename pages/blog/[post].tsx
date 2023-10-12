@@ -7,6 +7,7 @@ import Skeleton from 'react-loading-skeleton';
 import RenderComponents from '../../components/render-components';
 import ArchiveRelative from '../../components/archive-relative';
 import { Page, BlogPosts, PageUrl } from "../../typescript/pages";
+import  Chatbotsearch from "../../components/Chatbotsearch";
 
 
 export default function BlogPost({ blogPost, page, pageUrl }: { blogPost: BlogPosts, page: Page, pageUrl: PageUrl }) {
@@ -139,7 +140,7 @@ export default function BlogPost({ blogPost, page, pageUrl }: { blogPost: BlogPo
         </div>
       </div>
       <input type='hidden' value={post.analytics_link} name='analytics_link' id='analytics_link'></input>
-      <script src='/analytics.js'async/>
+      <Chatbotsearch></Chatbotsearch>
     </>
   );
 }

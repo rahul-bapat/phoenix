@@ -201,17 +201,30 @@ footer a {
 /* button area in contact form */
 
 .headings {
-  position: fixed;
+  /* position: fixed; */
   width: 100%;
   top: 12%;
   background: #edf3f4;
+  border-radius: 3px;
+}
+
+.mainClass {
+  justify-content: flex-end;
+  display: flex;
 }
 
 .input_container_wrapper {
   background: var(--surface-base-secondary,#edf3f4)!important;
   padding-bottom: 10px;
-  padding-left: 10%;
-  padding-right: 10%;
+  padding-left: 2%;
+  padding-right: 2%;
+  height:100%;
+}
+
+.button_tags {
+  height: 265px;
+    overflow-y: scroll;
+    margin-bottom: 10px;
 }
 
 a.submit_button {

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Chatbot from '../components/Chatbot';
+import Chatbotsearch from "../components/Chatbotsearch";
 
 
 const SearchPage = () => {
@@ -12,8 +13,16 @@ const SearchPage = () => {
         setSearchResults(results);
     };
 
+    const questions = [
+        { id: 1, text: 'What is your name?' },
+        { id: 2, text: 'How can I help you?' }
+      ];
+
     return (
-        <Chatbot ></Chatbot>
+        <>
+            <Chatbot ></Chatbot>
+            <Chatbotsearch></Chatbotsearch>
+        </>
     );
 };
 
