@@ -208,11 +208,19 @@ footer a {
   border-radius: 3px;
 }
 
+.question-box {
+  position: absolute;
+    top: 70px;
+    left: 20px;
+    font-weight: bold;
+}
+
 .Chatbotsearch_chatbotWrapper__b9BDc .headings {
-  position: unset;
   background-color: rgb(5, 49, 65);
   border-bottom-right-radius: unset;
   border-bottom-left-radius: unset;
+  top: 95px;
+    width: 392px;
 }
 .mainClass {
   justify-content: flex-end;
@@ -224,7 +232,6 @@ footer a {
   padding-bottom: 10px;
   padding-left: 2%;
   padding-right: 2%;
-  height:100%;
 }
 
 .button_tags {
@@ -241,7 +248,6 @@ a.submit_button {
   border-radius: 3px;
   background-color: rgb(5, 49, 65);
   color: #fff;
-  margin-right: 10px;
 }
 
 a.submit_button:hover {
@@ -2164,7 +2170,7 @@ margin-bottom: 20px;
 .chat_input {
   padding-left: 10px;
   border: none !important;
-  height: 70px !important;
+  height: 40px !important;
   outline: none;
   width: 100% !important;
 }

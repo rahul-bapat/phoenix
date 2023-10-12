@@ -8,20 +8,6 @@
   }
 
 
-  // const chatHistorySampleData = [
-  //     "How JLL GPT empowering employees?",
-  //     "What is JLL decarbonization strategy?",
-  //     "Tell me about Mihir Shah",
-  //     "Who is the Chief Executive Officer & President of JLL?",
-  //     "Who is chief technology officer of JLLT ?",
-  //     "Cheryl R. Carron",
-  //     "London office rental yield 2023",
-  //     "Latest trends and insights",
-  //     "Yao Morin about JLL GPT",
-  //     "who are JLL Board of Directors?",
-  // ];
-
-
   const search_style = {
       border: "none !important",
       height: "40px !important",
@@ -140,13 +126,39 @@
       return (
           <> {isChatbotOpen && (
           <div className={styles.chatbotWrapper}>
-                  <div className={styles.closeButton} onClick={handleCloseChatbot}>
-                      <img src="./linkedin.svg" alt="Close Button" />
-                  </div>
+                  
               <div className="headings">
+              <div className={styles.closeButton} onClick={handleCloseChatbot}>
+                      <img src="./close_btn.svg" alt="Close Button" />
+                  </div>
               <h1 className={styles.title}>JLL.com search</h1>
               <h2 className={styles.subheading}>Powered by AI</h2></div>
-              <div className={styles.chatContainer}>
+              <span className='question-box'>Hello 👋 Can I ask you a quick question?</span>
+              
+              <div className='input_container_wrapper'>
+                
+                <div className={styles.button_tags}>
+
+                  {initialQuestionButtons.map((item: string, index: number) => (
+                      <button
+                          className={styles.tag_button}
+                          key={index}
+                          onClick={() => handleSampleSearchClick(item, index)}
+                      >
+                        {item}
+                        {index === 1 && button1Clicked && (
+                        <>
+                          <span>No problem!</span>
+                          <span>What brought you to our site today?</span>
+
+                        </>
+                      )}
+                      
+                      </button>
+                      
+                  ))}
+                  </div>
+                  <div className={styles.chatContainer}>
                   {messages.map((message, index) => (
                       <div key={index} className={styles.messagePair}>
                           <div className={message.user ? styles.userMessage : styles.chatbotMessage}>
@@ -155,36 +167,6 @@
                       </div>
                   ))}
               </div>
-              <div className='input_container_wrapper'>
-                <span className='question-box'>Hello 👋 Can I ask you a quick question?</span>
-                <div className={styles.button_tags}>
-                  {initialQuestionButtons.map((item: string, index: number) => (
-                      <button
-                          className={styles.tag_button}
-                          key={index}
-                          onClick={() => handleSampleSearchClick(item, index)}
-                      >
-                        {index === 1 && button1Clicked && (
-                        <>
-                          <span>No problem!</span>
-                          <span>What brought you to our site today?</span>
-
-                        </>
-                      )}
-                      {item}
-                      </button>
-                      
-                  ))}
-                      {/* {chatHistorySampleData.map((item: string, index: number) => (
-                          <button
-                              className={styles.tag_button}
-                              key={index}
-                              onClick={() => handleSampleSearchClick(item)}
-                          >
-                              {item}
-                          </button>
-                      ))} */}
-                  </div>
                   <div className={styles.inputContainer}>
                       <input
                           className="chat_input"
@@ -219,7 +201,7 @@
           )}
               {isIconVisible &&
                   <div className={styles.chatbotIcon} onClick={handleChatbotToggle}>
-                      <img src="/hackathon.svg" />
+                      <img src="/open_btn.png" />
                   </div>
               }
           </>
