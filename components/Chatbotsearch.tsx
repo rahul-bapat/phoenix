@@ -8,18 +8,19 @@
   }
 
 
-  const chatHistorySampleData = [
-      "How JLL GPT empowering employees?",
-      "What is JLL decarbonization strategy?",
-      "Tell me about Mihir Shah",
-      "Who is the Chief Executive Officer & President of JLL?",
-      "Who is chief technology officer of JLLT ?",
-      "Cheryl R. Carron",
-      "London office rental yield 2023",
-      "Latest trends and insights",
-      "Yao Morin about JLL GPT",
-      "who are JLL Board of Directors?",
-  ];
+  // const chatHistorySampleData = [
+  //     "How JLL GPT empowering employees?",
+  //     "What is JLL decarbonization strategy?",
+  //     "Tell me about Mihir Shah",
+  //     "Who is the Chief Executive Officer & President of JLL?",
+  //     "Who is chief technology officer of JLLT ?",
+  //     "Cheryl R. Carron",
+  //     "London office rental yield 2023",
+  //     "Latest trends and insights",
+  //     "Yao Morin about JLL GPT",
+  //     "who are JLL Board of Directors?",
+  // ];
+
 
   const search_style = {
       border: "none !important",
@@ -36,12 +37,36 @@
       const [messages, setMessages] = useState<Message[]>([]);
       const [selectedItem, setSelectedItem] = useState("");
       const textBoxRef = useRef<HTMLInputElement>(null);
+      const [button1Clicked, setButton1Clicked] = useState(false);
+      const [initialQuestionButtons, setInitialQuestionButtons] = useState<string[]>([
+        "Sure go for it!",
+        "I am Just browsing"
+      ]);
+      const [replacementButtons, setReplacementButtons] = useState<string[]>([
+        "How JLL GPT empowering employees?",
+        "What is JLL decarbonization strategy?",
+        "Tell me about Mihir Shah",
+        "Who is the Chief Executive Officer & President of JLL?",
+        "Who is chief technology officer of JLLT ?",
+        "Cheryl R. Carron",
+        "London office rental yield 2023",
+        "Latest trends and insights",
+        "Yao Morin about JLL GPT",
+        "who are JLL Board of Directors?",
+      ]);
 
-      const handleSampleSearchClick = (item: string) => {
-          setSelectedItem(item);
-          if (textBoxRef.current !== null) {
-              textBoxRef.current.focus();
+      const handleSampleSearchClick = (item: string, id: number) => {
+          console.log(id);
+          if(id === 0) {
+            setInitialQuestionButtons(replacementButtons);
+          } else if(id === 1) {
+            console.log('1');
+            setButton1Clicked(true);
           }
+          // setSelectedItem(item);
+          // if (textBoxRef.current !== null) {
+          //     textBoxRef.current.focus();
+          // }
       };
 
       const handleUserMessage = async (message: string) => {
@@ -115,9 +140,26 @@
                   ))}
               </div>
               <div className='input_container_wrapper'>
-              <div className={styles.button_tags}>
-                      {/* <span>Try popular searches:</span> */}
-                      {chatHistorySampleData.map((item: string, index: number) => (
+                <span className='question-box'>Hello 👋 Can I ask you a quick question?</span>
+                <div className={styles.button_tags}>
+                  {initialQuestionButtons.map((item: string, index: number) => (
+                      <button
+                          className={styles.tag_button}
+                          key={index}
+                          onClick={() => handleSampleSearchClick(item, index)}
+                      >
+                        {index === 1 && button1Clicked && (
+                        <>
+                          <span>No problem!</span>
+                          <span>What brought you to our site today?</span>
+
+                        </>
+                      )}
+                      {item}
+                      </button>
+                      
+                  ))}
+                      {/* {chatHistorySampleData.map((item: string, index: number) => (
                           <button
                               className={styles.tag_button}
                               key={index}
@@ -125,7 +167,7 @@
                           >
                               {item}
                           </button>
-                      ))}
+                      ))} */}
                   </div>
                   <div className={styles.inputContainer}>
                       <input

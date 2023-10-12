@@ -201,13 +201,19 @@ footer a {
 /* button area in contact form */
 
 .headings {
-  /* position: fixed; */
+  position: fixed;
   width: 100%;
   top: 12%;
   background: #edf3f4;
   border-radius: 3px;
 }
 
+.Chatbotsearch_chatbotWrapper__b9BDc .headings {
+  position: unset;
+  background-color: rgb(5, 49, 65);
+  border-bottom-right-radius: unset;
+  border-bottom-left-radius: unset;
+}
 .mainClass {
   justify-content: flex-end;
   display: flex;
