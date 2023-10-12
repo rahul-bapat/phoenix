@@ -35,7 +35,20 @@
   const Chatbotsearch = () => {
       const [messages, setMessages] = useState<Message[]>([]);
       const [selectedItem, setSelectedItem] = useState("");
+      const [isIconVisible, setIconVisible] = useState(true);
+      const [isChatbotOpen, setIsChatbotOpen] = useState(false);
       const textBoxRef = useRef<HTMLInputElement>(null);
+
+
+      const handleChatbotToggle = () => {
+          setIsChatbotOpen(!isChatbotOpen);
+          setIconVisible(false);
+      };
+
+      const handleCloseChatbot = () => {
+          setIsChatbotOpen(false);
+          setIconVisible(true);
+      };
 
       const handleSampleSearchClick = (item: string) => {
           setSelectedItem(item);
@@ -101,7 +114,11 @@
       };
 
       return (
+          <> {isChatbotOpen && (
           <div className={styles.chatbotWrapper}>
+                  <div className={styles.closeButton} onClick={handleCloseChatbot}>
+                      <img src="./linkedin.svg" alt="Close Button" />
+                  </div>
               <div className="headings">
               <h1 className={styles.title}>JLL.com search</h1>
               <h2 className={styles.subheading}>Powered by AI</h2></div>
@@ -156,7 +173,15 @@
                   
               </div>
 
+
           </div>
+          )}
+              {isIconVisible &&
+                  <div className={styles.chatbotIcon} onClick={handleChatbotToggle}>
+                      <img src="/hackathon.svg" />
+                  </div>
+              }
+          </>
       );
 
 
